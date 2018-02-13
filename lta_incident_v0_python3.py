@@ -36,7 +36,7 @@ if __name__=="__main__":
                     if old_message_flag == 1:
                         continue
                     past_messages.append((message, event_request_time))
-                    print ('API Time: {}, Message: {}'.format(event_request_time,message))
+                    print ('API Time: {}, Message: {}'.format(event_request_time.strftime('%Y-%m-%d %H:%M:%S.%f')[:19],message))
         # Clean up past_message older than 1 day
         for q in past_messages:
             if q[1] < datetime.now() - timedelta(days=1):
