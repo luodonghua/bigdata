@@ -31,3 +31,6 @@ if [ -z "${PYSPARK_PYTHONPATH_SET}" ]; then
   export PYTHONPATH="${SPARK_HOME}/python/lib/py4j-0.10.7-src.zip:${PYTHONPATH}"
   export PYSPARK_PYTHONPATH_SET=1
 fi
+
+# Tuning number of spark worker instance, default is 1
+SPARK_WORKER_INSTANCES=3
