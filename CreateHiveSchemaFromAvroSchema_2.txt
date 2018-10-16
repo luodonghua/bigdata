@@ -1,0 +1,20 @@
+Donghuas-MacBook-Air:BigData donghua$ python CreateHiveSchemaFromAvroSchema.py UserInfo /data/UserInfo --partitions myear
+create external table UserInfo
+(username string
+,age int
+,salary double
+,country string
+,zipcode string)
+partitioned by (myear string) --table parition specification if paritition
+row format delimited fields terminated by ','
+stored as textfile
+location '/data/UserInfo'
+tblproperties (
+  "comment"="UserInfo"
+  ,"skip.header.line.count"="1"
+  ,"classification"="restricted"
+  ,"pii"="username"
+  ,"source"="edw01"
+  ,"steward"="donghua@compnay.com"
+)
+;

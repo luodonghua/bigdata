@@ -1,0 +1,18 @@
+{
+    "type" : "record",
+    "name" : "UserInfo",
+    "namespace" : "my.example",
+    "fields" : [
+        {"name" : "username", "type" : "string"},
+        {"name" : "age", "type" : "int"},
+        {"name" : "salary", "type" : "double"},
+        {"name" : "country", "type" : "string"},
+        {"name" : "zipcode", "type" : "string"}
+     ],
+    "header": "yes",
+    "comment": "",
+    "classification": "restricted",
+    "pii": "username",
+    "source": "edw01",
+    "steward": "donghua@compnay.com"
+}
