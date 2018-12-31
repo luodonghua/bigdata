@@ -1,0 +1,161 @@
+[root@node02 ~]# netstat -nap|grep LISTEN|grep 192.168.56.21
+tcp        0      0 192.168.56.21:8040      0.0.0.0:*               LISTEN      4890/java
+tcp        0      0 192.168.56.21:9864      0.0.0.0:*               LISTEN      4112/java
+tcp        0      0 192.168.56.21:9000      0.0.0.0:*               LISTEN      3614/python2
+tcp        0      0 192.168.56.21:8041      0.0.0.0:*               LISTEN      4890/java
+tcp        0      0 192.168.56.21:8042      0.0.0.0:*               LISTEN      4890/java
+tcp        0      0 192.168.56.21:9866      0.0.0.0:*               LISTEN      4112/java
+tcp        0      0 192.168.56.21:9995      0.0.0.0:*               LISTEN      7468/java
+tcp        0      0 192.168.56.21:9867      0.0.0.0:*               LISTEN      4112/java
+tcp        0      0 192.168.56.21:9868      0.0.0.0:*               LISTEN      4109/java
+tcp        0      0 192.168.56.21:9997      0.0.0.0:*               LISTEN      7424/java
+tcp        0      0 192.168.56.21:9870      0.0.0.0:*               LISTEN      4105/java
+tcp        0      0 192.168.56.21:19888     0.0.0.0:*               LISTEN      9570/java
+tcp        0      0 192.168.56.21:10033     0.0.0.0:*               LISTEN      9570/java
+tcp        0      0 192.168.56.21:8083      0.0.0.0:*               LISTEN      4201/java
+tcp        0      0 192.168.56.21:8020      0.0.0.0:*               LISTEN      4105/java
+tcp        0      0 192.168.56.21:8086      0.0.0.0:*               LISTEN      7424/java
+tcp        0      0 192.168.56.21:8022      0.0.0.0:*               LISTEN      4105/java
+tcp        0      0 192.168.56.21:8888      0.0.0.0:*               LISTEN      5090/python2.7
+tcp        0      0 192.168.56.21:11000     0.0.0.0:*               LISTEN      4906/java
+tcp        0      0 192.168.56.21:8088      0.0.0.0:*               LISTEN      4599/java
+tcp        0      0 192.168.56.21:8091      0.0.0.0:*               LISTEN      7468/java
+tcp        0      0 192.168.56.21:8030      0.0.0.0:*               LISTEN      4599/java
+tcp        0      0 192.168.56.21:8031      0.0.0.0:*               LISTEN      4599/java
+tcp        0      0 192.168.56.21:8032      0.0.0.0:*               LISTEN      4599/java
+tcp        0      0 192.168.56.21:8033      0.0.0.0:*               LISTEN      4599/java
+tcp        0      0 192.168.56.21:10020     0.0.0.0:*               LISTEN      9570/java
+
+
+
+Listen 192.168.31.21:8040
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8040/
+	ProxyPassReverse / http://node2.dbaglobe.com:8040/
+
+Listen 192.168.31.21:9864
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:9864/
+	ProxyPassReverse / http://node2.dbaglobe.com:9864/
+
+Listen 192.168.31.21:9000
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:9000/
+	ProxyPassReverse / http://node2.dbaglobe.com:9000/
+
+Listen 192.168.31.21:8041
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8041/
+	ProxyPassReverse / http://node2.dbaglobe.com:8041/
+
+Listen 192.168.31.21:8042
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8042/
+	ProxyPassReverse / http://node2.dbaglobe.com:8042/
+
+Listen 192.168.31.21:9866
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:9866/
+	ProxyPassReverse / http://node2.dbaglobe.com:9866/
+
+Listen 192.168.31.21:9995
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:9995/
+	ProxyPassReverse / http://node2.dbaglobe.com:9995/
+
+Listen 192.168.31.21:9867
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:9867/
+	ProxyPassReverse / http://node2.dbaglobe.com:9867/
+
+Listen 192.168.31.21:9868
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:9868/
+	ProxyPassReverse / http://node2.dbaglobe.com:9868/
+
+Listen 192.168.31.21:9997
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:9997/
+	ProxyPassReverse / http://node2.dbaglobe.com:9997/
+
+Listen 192.168.31.21:9870
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:9870/
+	ProxyPassReverse / http://node2.dbaglobe.com:9870/
+
+Listen 192.168.31.21:19888
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:19888/
+	ProxyPassReverse / http://node2.dbaglobe.com:19888/
+
+Listen 192.168.31.21:10033
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:10033/
+	ProxyPassReverse / http://node2.dbaglobe.com:10033/
+
+Listen 192.168.31.21:8083
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8083/
+	ProxyPassReverse / http://node2.dbaglobe.com:8083/
+
+Listen 192.168.31.21:8020
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8020/
+	ProxyPassReverse / http://node2.dbaglobe.com:8020/
+
+Listen 192.168.31.21:8086
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8086/
+	ProxyPassReverse / http://node2.dbaglobe.com:8086/
+
+Listen 192.168.31.21:8022
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8022/
+	ProxyPassReverse / http://node2.dbaglobe.com:8022/
+
+Listen 192.168.31.21:8888
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8888/
+	ProxyPassReverse / http://node2.dbaglobe.com:8888/
+
+Listen 192.168.31.21:11000
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:11000/
+	ProxyPassReverse / http://node2.dbaglobe.com:11000/
+
+Listen 192.168.31.21:8088
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8088/
+	ProxyPassReverse / http://node2.dbaglobe.com:8088/
+
+Listen 192.168.31.21:8091
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8091/
+	ProxyPassReverse / http://node2.dbaglobe.com:8091/
+
+Listen 192.168.31.21:8030
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8030/
+	ProxyPassReverse / http://node2.dbaglobe.com:8030/
+
+Listen 192.168.31.21:8031
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8031/
+	ProxyPassReverse / http://node2.dbaglobe.com:8031/
+
+Listen 192.168.31.21:8032
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8032/
+	ProxyPassReverse / http://node2.dbaglobe.com:8032/
+
+Listen 192.168.31.21:8033
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:8033/
+	ProxyPassReverse / http://node2.dbaglobe.com:8033/
+
+Listen 192.168.31.21:10020
+	ProxyPreserveHost On
+	ProxyPass / http://node2.dbaglobe.com:10020/
+	ProxyPassReverse / http://node2.dbaglobe.com:10020/
+
+		
