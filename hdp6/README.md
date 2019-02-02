@@ -4,6 +4,11 @@ Steps and repo files for HDP lab installation
 ```bash
 yum install -y yum-utils
 yum install -y zip unzip
+yum install -y wget
+yum install -y ntp
+systemctl enable ntpd
+systemctl stop firewalld
+systemctl disable firewalld
 ```
 2. Install MySQL Repo
 ```bash
@@ -55,4 +60,15 @@ grant all on *.* TO 'rangerkms'@'%';
 yum install jdk-8u201-linux-x64.rpm
 mkdir /usr/share/java
 wget -O /usr/share/java/mysql-connector-java.jar https://github.com/luodonghua/bigdata/blob/master/hdp6/mysql-connector-java-5.1.47.jar?raw=true
+```
+4. Install and config Ambari
+```bash
+echo "enabled=0" >> /etc/yum/pluginconf.d/refresh-packagekit.conf
+wget -O /etc/yum.repos.d/ambari.repo http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.7.3.0/ambari.repo
+yum install -y ambari-server
+
+mysql -u ambari -pN0t_ThisPassWd -D ambari < /var/lib/ambari-server/resources/Ambari-DDL-MySQL-CREATE.sql
+mysql -u ambari -pN0t_ThisPassWd -D ambari -e "show tables"
+ambari-server setup
+ambari-server start
 ```
