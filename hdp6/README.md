@@ -13,4 +13,38 @@ yum-config-manager --disable mysql80-community
 yum-config-manager --enable mysql57-community
 yum repolist all | grep mysql|grep enabled
 yum install -y mysql-community-server
+systemctl start mysqld
+grep 'temporary password' /var/log/mysqld.log
+mysql -u root -p
+```
+
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'N0t_ThisPassWd';
+
+create database ambari DEFAULT CHARACTER SET utf8;
+create user 'ambari'@'%' IDENTIFIED BY 'N0t_ThisPassWd';
+grant all on *.* TO 'ambari'@'%';
+
+create database druid DEFAULT CHARACTER SET utf8;
+create user 'druid'@'%' IDENTIFIED BY 'N0t_ThisPassWd';
+grant all on druid.* TO 'druid'@'%';
+
+create database hive DEFAULT CHARACTER SET utf8;
+create user 'hive'@'%' IDENTIFIED BY 'N0t_ThisPassWd';
+grant all on hive.* TO 'hive'@'%';
+
+create database oozie DEFAULT CHARACTER SET utf8;
+create user 'oozie'@'%' IDENTIFIED BY 'N0t_ThisPassWd';
+grant all on oozie.* TO 'oozie'@'%';
+
+create database ranger DEFAULT CHARACTER SET utf8;
+create user 'rangeradmin'@'%' IDENTIFIED BY 'N0t_ThisPassWd';
+grant all on *.* TO 'rangeradmin'@'%' WITH GRANT OPTION;
+
+create user 'rangeradmin'@'localhost' IDENTIFIED BY 'N0t_ThisPassWd';
+grant all on *.* TO 'rangeradmin'@'localhost' WITH GRANT OPTION;
+
+create database rangerkms DEFAULT CHARACTER SET utf8;
+create user 'rangerkms'@'%' IDENTIFIED BY 'N0t_ThisPassWd';
+grant all on *.* TO 'rangerkms'@'%';
 ```
