@@ -48,3 +48,11 @@ create database rangerkms DEFAULT CHARACTER SET utf8;
 create user 'rangerkms'@'%' IDENTIFIED BY 'N0t_ThisPassWd';
 grant all on *.* TO 'rangerkms'@'%';
 ```
+
+
+3. Install Java and JDBC
+```bash
+yum install jdk-8u201-linux-x64.rpm
+mkdir /usr/share/java
+wget -O /usr/share/java/mysql-connector-java.jar https://github.com/luodonghua/bigdata/blob/master/hdp6/mysql-connector-java-5.1.47.jar?raw=true
+```
