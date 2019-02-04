@@ -20,6 +20,9 @@ yum repolist all | grep mysql|grep enabled
 yum install -y mysql-community-server
 systemctl start mysqld
 grep 'temporary password' /var/log/mysqld.log
+echo "max_connections=10000" >> /etc/my.cnf
+echo "max_connect_errors=10000" >> /etc/my.cnf
+
 mysql -u root -p
 ```
 
