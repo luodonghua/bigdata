@@ -72,6 +72,7 @@ yum install -y ambari-server
 
 mysql -u ambari -pN0t_ThisPassWd -D ambari < /var/lib/ambari-server/resources/Ambari-DDL-MySQL-CREATE.sql
 mysql -u ambari -pN0t_ThisPassWd -D ambari -e "show tables"
+ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql-connector-java.jar
 ambari-server setup
 ambari-server start
 ```
