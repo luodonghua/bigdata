@@ -62,7 +62,7 @@ grant all on *.* TO 'rangerkms'@'%';
 ```bash
 yum install jdk-8u201-linux-x64.rpm
 mkdir /usr/share/java
-wget -O /usr/share/java/mysql-connector-java.jar https://github.com/luodonghua/bigdata/blob/master/hdp6/mysql-connector-java-5.1.47.jar?raw=true
+wget -O /usr/share/java/mysql-connector-java.jar https://github.com/luodonghua/bigdata/blob/master/hdp3/mysql-connector-java-5.1.47.jar?raw=true
 ```
 4. Install and config Ambari
 ```bash
