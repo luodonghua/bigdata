@@ -1,0 +1,30 @@
+====== One column without parsing ===========
+Donghuas-MacBook-Air:Downloads donghua$ du -sh http*
+1.3G	http.log
+135M	http_orc_default
+ 87M	http_orc_lzo
+1.3G	http_orc_none
+135M	http_orc_snappy
+ 72M	http_orc_zlib
+140M	http_parquet_default
+ 64M	http_parquet_gzip
+1.4G	http_parquet_none
+140M	http_parquet_snappy
+1.4G	http_parquet_uncompressed
+
+Donghuas-MacBook-Air:Downloads donghua$ du -sh access*
+216M	access.log
+ 41M	access_orc_default
+ 39M	access_orc_lzo
+226M	access_orc_none
+ 41M	access_orc_snappy
+ 30M	access_orc_zlib
+  0B	access_parquet_brotli
+ 45M	access_parquet_default
+ 25M	access_parquet_gzip
+  0B	access_parquet_lz4
+  0B	access_parquet_lzo
+226M	access_parquet_none
+ 45M	access_parquet_snappy
+226M	access_parquet_uncompressed
+  0B	access_parquet_zstd

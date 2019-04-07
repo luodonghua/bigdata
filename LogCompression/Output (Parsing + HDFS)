@@ -1,0 +1,42 @@
+
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/access_orc_default
+29.0 M  29.0 M  /data/access_orc_default
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/access_orc_lzo
+29.3 M  29.3 M  /data/access_orc_lzo
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/access_orc_none
+124.9 M  124.9 M  /data/access_orc_none
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/access_orc_snappy
+29.0 M  29.0 M  /data/access_orc_snappy
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/access_orc_zlib
+20.8 M  20.8 M  /data/access_orc_zlib
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/access_parquet_default
+31.9 M  31.9 M  /data/access_parquet_default
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/access_parquet_gzip
+19.0 M  19.0 M  /data/access_parquet_gzip
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/access_parquet_none
+134.7 M  134.7 M  /data/access_parquet_none
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/access_parquet_snappy
+31.9 M  31.9 M  /data/access_parquet_snappy
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/access_parquet_uncompressed
+134.7 M  134.7 M  /data/access_parquet_uncompressed
+[donghua@hdp ~]$
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/http_orc_default
+102.6 M  102.6 M  /data/http_orc_default
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/http_orc_lzo
+64.6 M  64.6 M  /data/http_orc_lzo
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/http_orc_none
+920.8 M  920.8 M  /data/http_orc_none
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/http_orc_snappy
+102.6 M  102.6 M  /data/http_orc_snappy
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/http_orc_zlib
+51.0 M  51.0 M  /data/http_orc_zlib
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/http_parquet_default
+105.3 M  105.3 M  /data/http_parquet_default
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/http_parquet_gzip
+44.4 M  44.4 M  /data/http_parquet_gzip
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/http_parquet_none
+927.7 M  927.7 M  /data/http_parquet_none
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/http_parquet_snappy
+105.3 M  105.3 M  /data/http_parquet_snappy
+[donghua@hdp ~]$ hdfs dfs -du -s -h  /data/http_parquet_uncompressed
+927.7 M  927.7 M  /data/http_parquet_uncompressed
