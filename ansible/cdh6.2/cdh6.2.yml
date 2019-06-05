@@ -1,0 +1,8 @@
+---
+- name: Metadata Repo Setup
+  hosts: metadb
+  gather_facts: False
+  remote_user: root
+  roles:
+    - common
+#    - metadb

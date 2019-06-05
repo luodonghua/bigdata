@@ -1,0 +1,16 @@
+[all]
+192.168.31.78 ansible_python_interpreter=/usr/bin/python
+
+[master]
+192.168.31.78 ansible_python_interpreter=/usr/bin/python
+
+[data]
+192.168.31.78 ansible_python_interpreter=/usr/bin/python
+
+[edge]
+192.168.31.78 ansible_python_interpreter=/usr/bin/python
+[manager]
+192.168.31.78 ansible_python_interpreter=/usr/bin/python
+
+[metadb]
+192.168.31.78 ansible_python_interpreter=/usr/bin/python

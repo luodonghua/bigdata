@@ -1,0 +1,10 @@
+# RPM packages to be installed in Common
+rpms_common:
+  - wget
+  - zip
+  - unzip
+  - curl
+
+# Contents to be added for each server /etc/hosts
+hostfile:
+  - "192.168.31.78  gw  gw"
