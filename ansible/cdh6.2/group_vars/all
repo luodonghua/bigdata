@@ -7,6 +7,10 @@ rpms_common:
   - yum-utils
   - ntp
 
+rpms_mysql:
+  - mysql-community-server
+  - mysql-connector-java-5
+
 
 # Contents to be added for each server /etc/hosts
 hostfile:

@@ -1,0 +1,22 @@
+---
+- name: Copy file with owner and permissions
+  copy:
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
+    owner: root
+    group: root
+    mode: '0644'
+    force: no
+
+- name: Copy file with owner and permissions
+  copy:
+    src: RPM-GPG-KEY-mysql
+    dest: /etc/yum.repos.d/RPM-GPG-KEY-mysql
+    owner: root
+    group: root
+    mode: '0644'
+    force: no
+
+- name: Install MySQL server and connectors packages
+  package: name={{ item }} state=present
+  with_items: "{{ rpms_mysql }}"

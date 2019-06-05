@@ -1,24 +1,47 @@
 ---
-- name: COMMON | Install basic packages
+- name: Install basic packages
   package: name={{ item }} state=present
   with_items: "{{ rpms_common }}"
 
-- name: COMMON | Disable SELinux
+- name: Disable SELinux
   selinux:
     state: disabled
 
-- name: COMMON | Update /etc/hosts from inventory
+- name: Update /etc/hosts from inventory
   lineinfile:
     dest=/etc/hosts
     line={{ item }} state=present
   with_items: "{{ hostfile }}"
 
-- name: COMMON | Disable Firewall
+- name: Disable Firewall
   systemd:
     name=firewalld enabled=no
     name=firewalld state=stopped
   ignore_errors: yes
 
+- name: Set timezone to Asia/Singapore
+  timezone:
+    name: Asia/Singapore
+
+- name: Fancy way of doing authorized_keys
+  authorized_key:
+    user=root
+    exclusive=no
+    key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+  ignore_errors: yes
+
+- name: Add lines to disable PackageKit in YUM
+  lineinfile: dest=/etc/yum/pluginconf.d/refresh-packagekit.conf line="enabled=0" state=present backup=yes create=yes
+
+- name: Add lines to avoid "LC_TYPE" error in Mac OSX terminal
+  blockinfile:
+    path: /etc/environment
+    state: present
+    backup: yes
+    block: |
+      # Add following 2 lines to fix LC_TYPE error
+      LANG=en_US.utf-8
+      LC_ALL=en_US.utf-8
 
 
 
