@@ -11,7 +11,7 @@
 - name: Copy file with owner and permissions
   copy:
     src: RPM-GPG-KEY-mysql
-    dest: /etc/yum.repos.d/RPM-GPG-KEY-mysql
+    dest: /etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
     owner: root
     group: root
     mode: '0644'
@@ -20,3 +20,20 @@
 - name: Install MySQL server and connectors packages
   package: name={{ item }} state=present
   with_items: "{{ rpms_mysql }}"
+
+- name: Enable and start MySQL Server
+  systemd:
+    name=mysqld enabled=yes
+    name=mysqld state=started
+  ignore_errors: yes
+
+- name: Find temporary password
+    shell: >
+      awk '$0 ~ "temporary password" {print $11}'
+    register: mysql_root_password_temp
+    tags: register
+
+- name: Set new password from temporary password
+    shell: mysql -e 'SET PASSWORD = PASSWORD({{ mysql_root_password }})' -uroot -p"{{ mysql_root_password_temp.stdout }}"
+
+

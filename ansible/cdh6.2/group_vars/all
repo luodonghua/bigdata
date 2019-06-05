@@ -6,10 +6,13 @@ rpms_common:
   - curl
   - yum-utils
   - ntp
+  - java-1.8.0-openjdk
 
 rpms_mysql:
   - mysql-community-server
-  - mysql-connector-java-5
+  - mysql-connector-java
+
+mysql_root_password: MyC0mplex_WD
 
 
 # Contents to be added for each server /etc/hosts
