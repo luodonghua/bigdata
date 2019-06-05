@@ -4,6 +4,9 @@ rpms_common:
   - zip
   - unzip
   - curl
+  - yum-utils
+  - ntp
+
 
 # Contents to be added for each server /etc/hosts
 hostfile:
